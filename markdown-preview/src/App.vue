@@ -1,28 +1,44 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col text-center">
+        <h1 class="light">Markdown Preview</h1>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h4 class="light">Markdown</h4>
+        <textarea class="info" v-model="markdown"/>
+      </div>
+      <div class="col-md-6">
+        <h4 class="light">Preview</h4>
+        <div :key="markdown" class="info" v-markdown>{{markdown}}</div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: 'app',
+  data() {
+    return {
+      markdown: '\n',
+    };
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+textarea {
+  resize: none;
+  border: 3px dashed orange;
+  outline: none;
+}
+.info {
+  height: 400px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 </style>
