@@ -24,7 +24,7 @@ export default {
   name: 'app',
   data() {
     return {
-      markdown: '\n',
+      markdown: '###### Hello World\n',
     };
   },
 };
