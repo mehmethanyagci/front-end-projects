@@ -28,7 +28,7 @@
         <b-button
           :class="{'active-operator': operator === '-'}"
           variant="warning"
-          @click="updateOperator('-')"
+          @click="updateOperator('-')" 
         >-</b-button>
       </b-row>
 
@@ -137,4 +137,5 @@ $dark-gray: #6c757d;
 .card-body {
   padding: 0;
 }
+
 </style>
